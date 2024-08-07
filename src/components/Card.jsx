@@ -9,7 +9,10 @@ function Card({ data, reference }) {
       <motion.div
         drag
         dragConstraints={reference}
-        className="relative  flex-shrink-0 w-60 h-72 rounded-[45px] bg-zinc-900/90 text-white px-8 py-10 overflow-hidden"
+        whileDrag={{ scale: 1.1 }}
+        dragElastic={0.1}
+        dragTransition={{ bounceStiffness: 500, bounceDamping: 10 }}
+        className="relative cursor-pointer flex-shrink-0 w-60 h-72 rounded-[45px] bg-zinc-900/90 text-white px-8 py-10 overflow-hidden"
       >
         <FaRegFileAlt />
         <p className="text-sm leading-tight mt-5 font-semibold">{data.desc}</p>
